@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Puzzle game</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/puzzleStyle.css">
+    <!-- <script src="jquery-3.4.1.min.js"></script> -->
+</head>
+<body id="bo">
+
+    <div id="scores">
+        <button type="button" class="btn btn-outline-success bt" id="closeTable">Home</button>
+    </div>
+    
+    <div id="timer">
+    <!-- <span id="minutes"></span><div>:</div><span id="seconds"></span> -->
+    </div>
+
+    <!-- Win message and effect -->
+    <div class="pyro" id="eff">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="message">
+          <div class="messageText">Congratulations! You won!</div>
+          <button type="button" class="btn btn-outline-success bt" id="homeBtn">Home</button>
+        </div>
+      </div>
+
+    <!-- Registration message -->
+    <div id="registration">
+        <div class="messageText">You have been succesfuly registered</div>
+        <button type="button" class="btn btn-outline-success bt" id="homeBtn2">Home</button>
+    </div>
+
+    <!-- Level buttons -->
+    <div id="levels">
+        <button type="button" class="btn btn-outline-success bt" id="levelEasy">Easy</button>
+        <button type="button" class="btn btn-outline-success bt" id="levelMedium">Medium</button>
+        <button type="button" class="btn btn-outline-success bt" id="levelHard">Hard</button>
+        <button type="button" class="btn btn-success bt" id="hideLevels">Hide levels</button>
+    </div>
+
+    <!-- Home page buttons  -->
+    <div id="buttons">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="play">Play</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#about" id="aboutBtn">About</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#register" id="registerBtn">Register</button>
+    </div>
+
+    <!-- Modal for About -->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header  bg-dark">
+                <h5 class="modal-title text-white" id="aboutLabel">About this game</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-light">
+                The game has 3 levels of difficulty.
+            </div>
+            <div class="modal-body bg-light">
+                Click the squares to move them. 
+                You can only move a square which has an empty square as a neighbour and they will switch place. 
+                Place all the squares in the right order to match the image and you win.
+            </div>
+            <div class="modal-body bg-light">
+                The register is optional. If you do register, you will have a timer and your score will be displayed in a table.
+            </div>
+            <div class="modal-footer bg-dark">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Modal for Register -->
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="registerLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header  bg-dark">
+                <h5 class="modal-title text-white" id="registerLabel">Fill the form to register</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-light ">
+                <input type="text" name="" id="nameInput" placeholder="Firstname" class="inputs" required>
+            </div>
+            <div class="modal-body bg-light">
+                <input type="text" name="" id="lastnameInput" placeholder="Lastname" class="inputs" required>
+            </div>
+            <div class="modal-body bg-light">
+                <input type="email" name="" id="emailInput" placeholder="E-mail adress / optional" class="inputs">
+            </div>
+            <div class="modal-footer bg-dark">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="formBtn">Register</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home page  -->
+    <div id="headerContainer">
+        <div id="gameBy">A game by</div>
+        <div class="header" id="name">everyday-hour</div>
+        <div class="header" id="studios">STUDIOS</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./script/puzzleApp.js"></script>
+</body>
+</html>
